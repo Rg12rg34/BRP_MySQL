@@ -1,0 +1,94 @@
+create database BRP1;
+show databases;
+use BRP1;
+show tables;
+drop  database BRP1;
+create table employee_table( 
+	id int not null auto_increment,
+    name varchar(40) not null,
+    occupation varchar(35) not null,
+    age int not null,
+    primary key (id)
+    );
+    show tables;
+    describe employee_table;
+     alter table employee_table
+    add salary int(20) not null;
+    select *from employee_table;
+      insert into employee_table values (1,"Rahul","QA",25,45000);
+       select *from employee_table;
+       insert into employee_table values (2,"Rohit","Test Engineer",24,42000);
+     insert into employee_table values (3,"Deepak","Software Engineer",22,30000);
+      /*MODIFY column in the table */
+    alter table employee_table
+     modify name varchar(50) null;
+     /*add column */
+    alter table employee_table
+    add email varchar(20) not null;
+    /*drop column */
+    alter table employee_table
+    drop column email;
+     /*RENAME column in table */
+     ALTER TABLE employee_table
+     CHANGE COLUMN name emp_name varchar(20) 
+     not null;
+    
+                /* MySQL Show/List Tables */
+SHOW TABLES;
+SHOW full TABLES;
+SHOW TABLES IN BRP1;
+SHOW TABLES FROM BRP1;
+SHOW TABLES FROM BRP1 LIKE "stud%";
+SHOW TABLES IN BRP1 LIKE "time%";  
+
+				 /* MySQL Rename Table */
+             
+rename table employee_table TO new_employee_table;  
+
+                 
+           
+				
+
+INSERT INTO customer ( Id, Name, Product, Country, Year)     
+VALUES (1, 'Stephen', 'Computer', 'USA', 2015),     
+(2, 'Joseph', 'Laptop', 'India', 2016),     
+(3, 'John', 'TV', 'USA', 2016),    
+(4, 'Donald', 'Laptop', 'England', 2015),    
+(5, 'Joseph', 'Mobile', 'India', 2015),    
+(6, 'Peter', 'Mouse', 'England', 2016); 
+SELECT * FROM customer;    
+TRUNCATE TABLE customer;  
+
+                    /* MySQL DROP Table  */
+ DROP TABLE  customer;   
+ 
+                 /* MySQL TRUNCATE Table  */
+CREATE TABLE customer (    
+    Id int PRIMARY KEY NOT NULL,     
+    Name varchar(45) NOT NULL,     
+    Product varchar(45) DEFAULT NULL,     
+    Country varchar(25) DEFAULT NULL,     
+    Year int NOT NULL    
+);  
+              /* MySQL Add/Delete Column */          
+ CREATE TABLE Test (  
+    Stude_id int AUTO_INCREMENT PRIMARY KEY,  
+    Name varchar(55) NOT NULL  
+);  
+ALTER TABLE Test   
+ADD COLUMN City VARCHAR(30) NOT NULL;  
+ALTER TABLE Test   
+ADD COLUMN Phone_number VARCHAR(20) NOT NULL AFTER Name;
+ INSERT INTO Test( Name, Phone_number, City)   
+VALUES ('Peter', '34556745362', 'California'),  
+('Mike', '983635674562', 'Texas');  
+ALTER TABLE Test   
+ADD COLUMN Branch VARCHAR(30) DEFAULT NULL After Name,  
+ADD COLUMN Email VARCHAR(20) DEFAULT NULL AFTER Phone_number; 
+ALTER TABLE Test  
+  CHANGE COLUMN Phone_number Mobile_number  
+    varchar(20) NOT NULL;  
+ALTER TABLE Test DROP COLUMN Branch;  
+ALTER TABLE Test  
+    DROP COLUMN Mobile_number,  
+    DROP COLUMN Email;      
